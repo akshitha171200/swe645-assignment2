@@ -15,8 +15,8 @@ spec:
         app: surveyform
     spec:
       containers:
-        - name: hw2-survey645-container
-          image: atheretu/hw2-survey645:latest
+        - name: hw2-survey645-container2
+          image: atheretu/hw2-survey645:0.2
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
