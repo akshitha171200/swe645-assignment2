@@ -1,0 +1,198 @@
+<!-- Akshitha Theretupally-->
+<!-- G01472457-->
+ 
+<!-- This web page is used to conduct a student survey with submit and cancel buttons along with few validations-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survey Form</title>
+    <style>
+        body {
+            font-family: "Inconsolata", sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: auto;
+
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin-bottom: 20px;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            margin-right: 20px;
+            display: inline-block;
+        }
+
+        .button-group {
+            margin-top: 20px;
+        }
+
+        .button-group button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button-group button.cancel-btn {
+            background-color: #f44336;
+        }
+
+        .button-group button:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            bottom: 0px;
+            min-height: 50px;
+            width: 100%;
+            background-color: white;
+            padding-top: 6px;
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="padding: 50px;">
+
+        <h1 style="text-align: center;">Student Survey Form</h1>
+        <form action="submit_form.html" method="POST">
+
+            <!-- Personal Information Fields -->
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="firstName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="lastName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="street-address">Street Address:</label>
+                <input type="text" id="street-address" name="streetAddress" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+            </div>
+
+            <div class="form-group">
+                <label for="zip">ZIP:</label>
+                <input type="text" id="zip" name="zip" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telephone">Telephone Number:</label>
+                <input type="tel" id="telephone" name="telephone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="survey-date">Date of Survey:</label>
+                <input type="date" id="survey-date" name="surveyDate" required>
+            </div>
+
+            <div class="checkbox-group">
+                <label>What did you like most about the campus?</label><br>
+                <label><input type="checkbox" name="likes" value="students"> Students</label><br>
+                <label><input type="checkbox" name="likes" value="location"> Location</label><br>
+                <label><input type="checkbox" name="likes" value="campus"> Campus</label><br>
+                <label><input type="checkbox" name="likes" value="atmosphere"> Atmosphere</label><br>
+                <label><input type="checkbox" name="likes" value="dormRooms"> Dorm Rooms</label><br>
+                <label><input type="checkbox" name="likes" value="sports"> Sports</label><br>
+            </div>
+
+            <div class="radio-group">
+                <label>How did you become interested in the university?</label><br>
+                <label><input type="radio" name="interestSource" value="friends" required> Friends</label><br>
+                <label><input type="radio" name="interestSource" value="television" required> Television</label><br>
+                <label><input type="radio" name="interestSource" value="internet" required> Internet</label><br>
+                <label><input type="radio" name="interestSource" value="other" required> Other</label><br>
+            </div>
+
+            <div class="form-group">
+                <label for="recommendation">How likely are you to recommend this school to others?</label>
+                <select id="recommendation" name="recommendation" required>
+                    <option value="veryLikely">Very Likely</option>
+                    <option value="likely">Likely</option>
+                    <option value="unlikely">Unlikely</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="raffle">Raffle (Enter at least 10 comma-separated numbers from 1 to 100):</label>
+                <input type="text" id="raffle" name="raffle" pattern="^(\d{1,2}|100)(,\s*(\d{1,2}|100)){9,}$" required
+                    placeholder="e.g., 12, 34, 56, 78, 90, 23, 45, 67, 89, 10">
+                <small>Example: 12, 34, 56, 78, 90, 23, 45, 67, 89, 10</small>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Additional Comments:</label>
+                <textarea id="comments" name="comments" placeholder="Enter any additional comments here..."></textarea>
+            </div>
+
+            <div class="button-group">
+                <button class="submit-btn" type="submit">Submit Survey</button>
+                <button class="cancel-btn" type="reset">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+    <footer>
+        <p>Copyright &copy; 2024. All Rights Reserved by Akshitha Theretupally</p>
+    </footer>
+
+</body>
+
+</html>
